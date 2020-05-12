@@ -1,0 +1,166 @@
+{
+	"name": "first-network",
+	"version": "1.0.0",
+	"license": "Apache-2.0",
+	"client": {
+		"tlsEnable": false,
+		"adminUser": "admin",
+		"adminPassword": "adminpw",
+		"enableAuthentication": false,
+		"organization": "Summit",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"commonchannel": {
+			"peers": {
+				"peer0.summit.icdlt.net": {},
+				"peer0.intellect.icdlt.net": {},
+				"peer0.flexmle.icdlt.net": {},
+				"peer0.flexlatam.icdlt.net": {},
+				"peer0.genesis.icdlt.net": {},
+				"peer0.qfxlm.icdlt.net": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		}
+	},
+	"organizations": {
+		"SummitMSP": {
+			"mspid": "SummitMSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/etc/data/peerOrganizations/summit.icdlt.net/users/Admin@summit.icdlt.net/msp/keystore/d615d844d1b59b79acd75feca71ebaeec37a5a255e6124ed73003dbf8cdb2a59_sk"
+			},
+			"signedCert": {
+				"path": "/etc/data/peerOrganizations/summit.icdlt.net/users/Admin@summit.icdlt.net/msp/signcerts/Admin@summit.icdlt.net-cert.pem"
+			}
+		},
+		"IntellectMSP": {
+			"mspid": "IntellectMSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/etc/data/peerOrganizations/intellect.icdlt.net/users/Admin@summit.icdlt.net/msp/keystore/568d59cba9a41f01d87e2a5f19255c93439b2d41f3e97250069f075520dbbdde_sk"
+			},
+			"signedCert": {
+				"path": "/etc/data/peerOrganizations/intellect.icdlt.net/users/Admin@summit.icdlt.net/msp/signcerts/Admin@intellect.icdlt.net-cert.pem"
+			}
+		},
+		"FlexmleMSP": {
+			"mspid": "FlexmleMSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/etc/data/peerOrganizations/flexmle.icdlt.net/users/Admin@flexmle.icdlt.net/msp/keystore/d72c969163c42e29eaf19181360683107d2e21b206e173b9440123d9581c8431_sk"
+			},
+			"signedCert": {
+				"path": "/etc/data/peerOrganizations/flexmle.icdlt.net/users/Admin@flexmle.icdlt.net/msp/signcerts/Admin@flexmle.icdlt.net-cert.pem"
+			}
+		},
+		"FlexlatamMSP": {
+			"mspid": "FlexlatamMSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/etc/data/peerOrganizations/flexlatam.icdlt.net/users/Admin@flexlatam.icdlt.net/msp/keystore/7615e1912a7e576602fa566d87c5a90db08b717fdfa83149aaadb5d16ed21e4e_sk"
+			},
+			"signedCert": {
+				"path": "/etc/data/peerOrganizations/flexlatam.icdlt.net/users/Admin@flexlatam.icdlt.net/msp/signcerts/Admin@flexlatam.icdlt.net-cert.pem"
+			}
+		},
+		"QfxlmMSP": {
+			"mspid": "QfxlmMSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/etc/data/peerOrganizations/qfxlm.icdlt.net/users/Admin@qfxlm.icdlt.net/msp/keystore/8bd37bda8457f11c5579b73236e52918dc8ccc5fe71555fc41e144389bf0ee26_sk"
+			},
+			"signedCert": {
+				"path": "/etc/data/peerOrganizations/qfxlm.icdlt.net/users/Admin@qfxlm.icdlt.net/msp/signcerts/Admin@qfxlm.icdlt.net-cert.pem"
+			}
+		},
+		"GenesisMSP": {
+			"mspid": "GenesisMSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/etc/data/peerOrganizations/genesis.icdlt.net/users/Admin@genesis.icdlt.net/msp/keystore/c9a19d4b02ea5dbc1a564b9765a0161696ce6e9f068c04bcba2dfcf81fab10ef_sk"
+			},
+			"signedCert": {
+				"path": "/etc/data/peerOrganizations/genesis.icdlt.net/users/Admin@genesis.icdlt.net/msp/signcerts/Admin@genesis.icdlt.net-cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.summit.icdlt.net": {
+			"tlsCACerts": {
+				"path": "/etc/data/peerOrganizations/summit.icdlt.net/peers/peer0.summit.icdlt.net/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.summit.icdlt.net:7051",
+			"eventUrl": "grpcs://peer0.summit.icdlt.net:7053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.summit.icdlt.net"
+			}
+		},
+		"peer0.intellect.icdlt.net": {
+			"tlsCACerts": {
+				"path": "/etc/data/peerOrganizations/intellect.icdlt.net/peers/peer0.intellect.icdlt.net/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.intellect.icdlt.net:8051",
+			"eventUrl": "grpcs://peer0.intellect.icdlt.net:8053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.intellect.icdlt.net"
+			}
+		},
+		"peer0.flexmle.icdlt.net": {
+			"tlsCACerts": {
+				"path": "/etc/data/peerOrganizations/flexmle.icdlt.net/peers/peer0.flexmle.icdlt.net/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.flexmle.icdlt.net:11051",
+			"eventUrl": "grpcs://peer0.flexmle.icdlt.net:11053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.flexmle.icdlt.net"
+			}
+		},
+		"peer0.flexlatam.icdlt.net": {
+			"tlsCACerts": {
+				"path": "/etc/data/peerOrganizations/flexlatam.icdlt.net/peers/peer0.flexlatam.icdlt.net/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.flexlatam.icdlt.net:9051",
+			"eventUrl": "grpcs://peer0.flexlatam.icdlt.net:9053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.flexlatam.icdlt.net"
+			}
+		},
+		"peer0.genesis.icdlt.net": {
+			"tlsCACerts": {
+				"path": "/etc/data/peerOrganizations/genesis.icdlt.net/peers/peer0.genesis.icdlt.net/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.genesis.icdlt.net:10051",
+			"eventUrl": "grpcs://peer0.genesis.icdlt.net:10053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.genesis.icdlt.net"
+			}
+		},
+		"peer0.qfxlm.icdlt.net": {
+			"tlsCACerts": {
+				"path": "/etc/data/peerOrganizations/qfxlm.icdlt.net/peers/peer0.qfxlm.icdlt.net/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.qfxlm.icdlt.net:12051",
+			"eventUrl": "grpcs://peer0.qfxlm.icdlt.net:12053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.qfxlm.icdlt.net"
+			}
+		}
+
+	}
+}

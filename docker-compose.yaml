@@ -5,15 +5,15 @@ volumes:
   walletstore:
 
 networks:
-    mynetwork.com:
+    icdlt.net:
         external:
             name: net_byfn
 
 services:
-  explorerdb.mynetwork.com:
+  explorerdb.icdlt.net:
     image: hyperledger/explorer-db:latest
-    container_name: explorerdb.mynetwork.com
-    hostname: explorerdb.mynetwork.com
+    container_name: explorerdb.icdlt.net
+    hostname: explorerdb.icdlt.net
     environment:
       - DATABASE_DATABASE=fabricexplorer
       - DATABASE_USERNAME=admin
@@ -26,14 +26,14 @@ services:
     volumes:
       - data:/var/lib/postgresql/data
     networks:
-      - mynetwork.com
+      - icdlt.net
 
-  explorer.mynetwork.com:
+  explorer.icdlt.net:
     image: hyperledger/explorer:latest
-    container_name: explorer.mynetwork.com
-    hostname: explorer.mynetwork.com
+    container_name: explorer.icdlt.net
+    hostname: explorer.icdlt.net
     environment:
-      - DATABASE_HOST=explorerdb.mynetwork.com
+      - DATABASE_HOST=explorerdb.icdlt.net
       - DATABASE_DATABASE=fabricexplorer
       - DATABASE_USERNAME=admin
       - DATABASE_PASSWD=password
@@ -52,7 +52,7 @@ services:
     ports:
       - 8080:8080
     depends_on:
-      explorerdb.mynetwork.com:
+      explorerdb.icdlt.net:
         condition: service_healthy
     networks:
-      - mynetwork.com
+      - icdlt.net

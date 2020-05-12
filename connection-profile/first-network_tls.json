@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"license": "Apache-2.0",
 	"client": {
-		"tlsEnable": false,
+		"tlsEnable": true,
 		"adminUser": "admin",
 		"adminPassword": "adminpw",
 		"enableAuthentication": false,
@@ -19,7 +19,6 @@
 	},
 	"channels": {
 		"commonchannel": {
-			"orderers": ["orderer.icdlt.net"],
 			"peers": {
 				"peer0.summit.icdlt.net": {}
 			},
@@ -35,9 +34,8 @@
 		}
 	},
 	"organizations": {
-		"Summit": {
+		"Org1MSP": {
 			"mspid": "SummitMSP",
-			"peers": ["peer0.summit.icdlt.net"],
 			"fullpath": true,
 			"adminPrivateKey": {
 				"path": "/etc/data/peerOrganizations/summit.icdlt.net/users/Admin@summit.icdlt.net/msp/keystore/d615d844d1b59b79acd75feca71ebaeec37a5a255e6124ed73003dbf8cdb2a59_sk"
@@ -52,8 +50,8 @@
 			"tlsCACerts": {
 				"path": "/etc/data/peerOrganizations/summit.icdlt.net/peers/peer0.summit.icdlt.net/tls/ca.crt"
 			},
-			"url": "grpc://peer0.summit.icdlt.net:7051",
-			"eventUrl": "grpc://peer0.summit.icdlt.net:7053",
+			"url": "grpcs://peer0.summit.icdlt.net:7051",
+			"eventUrl": "grpcs://peer0.summit.icdlt.net:7053",
 			"grpcOptions": {
 				"ssl-target-name-override": "peer0.summit.icdlt.net"
 			}
